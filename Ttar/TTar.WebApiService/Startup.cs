@@ -10,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Ttar.Business.Abstract;
+using Ttar.Business.Concrete;
+using Ttar.DAL.Abstract;
+using Ttar.DAL.Concrete;
 
 namespace TTar.WebApiService
 {
@@ -21,14 +25,15 @@ namespace TTar.WebApiService
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<ICategoryManager, CategoryManager>();
+            services.AddScoped<ICategoryDal, CategoryDal>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
