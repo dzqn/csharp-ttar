@@ -20,9 +20,23 @@ namespace Ttar.WebApiService.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Category> Get()
+        public IActionResult Get()
         {
-            return categoryManager.GetAllCategory().ToArray();
+            var allCategories = categoryManager.GetAllCategory().ToArray();
+            return Ok(allCategories);
+        }
+
+        public IActionResult Post(Category category)
+        {
+            try
+            {
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
         }
     }
 }

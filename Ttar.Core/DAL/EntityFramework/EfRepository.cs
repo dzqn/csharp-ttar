@@ -8,7 +8,7 @@ using Ttar.Core.Entities;
 
 namespace Ttar.Core.DAL.EntityFramework
 {
-    public class Repository<TEntity, TContext> : IRepository<TEntity>
+    public class EfRepository<TEntity, TContext> : IRepository<TEntity>
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()
     {

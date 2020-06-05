@@ -2,9 +2,9 @@
 
 namespace Ttar.Entities.Concrete
 {
-    public class Category :IEntity
+    public class Category : IEntity
     {
-        public virtual int CategoryId { get; set; }
-        public virtual string CategoryName { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

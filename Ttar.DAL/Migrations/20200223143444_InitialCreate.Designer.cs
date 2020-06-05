@@ -7,7 +7,7 @@ using Ttar.DAL.Concrete;
 
 namespace Ttar.DAL.Migrations
 {
-    [DbContext(typeof(MyContext))]
+    [DbContext(typeof(EfContext))]
     [Migration("20200223143444_InitialCreate")]
     partial class InitialCreate
     {

@@ -6,7 +6,7 @@ using Ttar.DAL.Concrete;
 
 namespace Ttar.DAL.Migrations
 {
-    [DbContext(typeof(MyContext))]
+    [DbContext(typeof(EfContext))]
     partial class MyContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

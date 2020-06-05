@@ -2,12 +2,12 @@
 
 namespace Ttar.Entities.Concrete
 {
-    public class Product: IEntity
+    public class Product : IEntity
     {
-        public virtual int ProductId { get; set; }
-        public virtual string ProductName { get; set; }
-        public virtual int CategoryId { get; set; }
-        public virtual string QuantityPerUnit { get; set; }
-        public virtual decimal UnitPrice { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int CategoryId { get; set; }
+        public string QuantityPerUnit { get; set; }
+        public decimal UnitPrice { get; set; }
     }
 }

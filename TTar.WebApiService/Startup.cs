@@ -31,7 +31,7 @@ namespace TTar.WebApiService
             services.AddControllers();
 
             services.AddScoped<ICategoryManager, CategoryManager>();
-            services.AddScoped<ICategoryDal, CategoryDal>();
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

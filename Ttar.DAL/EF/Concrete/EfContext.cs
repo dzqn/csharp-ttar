@@ -7,7 +7,7 @@ using Ttar.Entities.Concrete;
 
 namespace Ttar.DAL.Concrete
 {
-    public class MyContext : DbContext
+    public class EfContext : DbContext
     {
 
         public DbSet<Category> Categories { get; set; }

@@ -12,9 +12,9 @@ namespace Ttar.DAL.Concrete.Mapping
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.ToTable(@"Categories", @"dbo");
-            builder.HasKey(x => x.CategoryId);
-            builder.Property(x => x.CategoryId).HasColumnName("CategoryId");
-            builder.Property(x => x.CategoryName).HasColumnName("CategoryName");
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).HasColumnName("CategoryId");
+            builder.Property(x => x.Name).HasColumnName("CategoryName");
         }
     }
 }

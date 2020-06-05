@@ -7,7 +7,7 @@ using Ttar.Entities.Concrete;
 
 namespace Ttar.DAL.Concrete
 {
-    public class CategoryDal: Repository<Category,MyContext> , ICategoryDal
+    public class EfCategoryDal: EfRepository<Category,EfContext> , ICategoryDal
     {
     }
 }
