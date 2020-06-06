@@ -18,5 +18,25 @@ namespace Ttar.Business.Concrete
         {
             return categoryDal.GetList();
         }
+
+        public bool DeleteCategory(Category category)
+        {
+            try
+            {
+                var currentCategory = categoryDal.Get(x => x.Id == category.Id);
+                if (currentCategory != null)
+                {
+                    categoryDal.Delete(category);
+                    return true;
+
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

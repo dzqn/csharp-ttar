@@ -8,5 +8,6 @@ namespace Ttar.Business.Abstract
     public interface ICategoryManager
     {
         List<Category> GetAllCategory();
+        bool DeleteCategory(Category category);
     }
 }

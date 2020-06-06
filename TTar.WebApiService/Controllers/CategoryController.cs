@@ -38,5 +38,13 @@ namespace Ttar.WebApiService.Controllers
                 return BadRequest();
             }
         }
+
+        public IActionResult Delete(Category category)
+        {
+            var result = categoryManager.DeleteCategory(category);
+            if (result)
+                return Ok();
+            else return BadRequest();
+        }
     }
 }
