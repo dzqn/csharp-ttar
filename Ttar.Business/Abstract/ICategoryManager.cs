@@ -9,7 +9,7 @@ namespace Ttar.Business.Abstract
     {
         List<Category> GetAllCategory();
         bool DeleteCategory(Category category);
-
+        Category AddCategory(Category category);
         Category GetSingleCategory(int id);
     }
 }

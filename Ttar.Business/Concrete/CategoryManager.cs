@@ -25,6 +25,11 @@ namespace Ttar.Business.Concrete
             return categoryDal.Get(x => x.Id == id);
         }
 
+        public Category AddCategory(Category category)
+        {
+           return  categoryDal.Add(category);
+        } 
+
         public bool DeleteCategory(Category category)
         {
             try

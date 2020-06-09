@@ -39,7 +39,7 @@ namespace Ttar.WebApiService.Controllers
         {
             try
             {
-                return Ok();
+                return Ok(categoryManager.AddCategory(category));
             }
             catch (Exception)
             {
