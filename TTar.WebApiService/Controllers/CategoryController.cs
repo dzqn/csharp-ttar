@@ -26,6 +26,15 @@ namespace Ttar.WebApiService.Controllers
             return Ok(allCategories);
         }
 
+        [HttpGet]
+        [Route("api/[controller]/{id}")]
+        public IActionResult GetById(int id)
+        {
+            var category = categoryManager.GetSingleCategory(id);
+            return Ok(category);
+        }
+
+        [HttpPost]
         public IActionResult Post(Category category)
         {
             try
@@ -39,6 +48,7 @@ namespace Ttar.WebApiService.Controllers
             }
         }
 
+        [HttpDelete]
         public IActionResult Delete(Category category)
         {
             var result = categoryManager.DeleteCategory(category);

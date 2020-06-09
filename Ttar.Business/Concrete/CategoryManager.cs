@@ -14,9 +14,15 @@ namespace Ttar.Business.Concrete
         {
             this.categoryDal = categoryDal;
         }
+
         public List<Category> GetAllCategory()
         {
             return categoryDal.GetList();
+        }
+
+        public Category GetSingleCategory(int id)
+        {
+            return categoryDal.Get(x => x.Id == id);
         }
 
         public bool DeleteCategory(Category category)
