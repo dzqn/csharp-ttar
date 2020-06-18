@@ -39,11 +39,11 @@ namespace Ttar.WebApiService.Controllers
         {
             try
             {
-                return Ok(categoryManager.AddCategory(category));
+                Category addedCategory = categoryManager.AddCategory(category);
+                return CreatedAtAction("Post", new { id = addedCategory.Id });
             }
             catch (Exception)
             {
-
                 return BadRequest();
             }
         }
