@@ -31,7 +31,10 @@ namespace Ttar.WebApiService.Controllers
         public IActionResult GetById(int id)
         {
             var category = categoryManager.GetSingleCategory(id);
-            return Ok(category);
+            if (category != null && category.Id > 0)
+                return Ok(category);
+            else
+                return NotFound();
         }
 
         [HttpPost]
@@ -55,6 +58,11 @@ namespace Ttar.WebApiService.Controllers
             if (result)
                 return Ok();
             else return BadRequest();
+        }
+
+        public IActionResult Update(Category category)
+        {
+            return Ok();
         }
     }
 }
