@@ -49,5 +49,10 @@ namespace Ttar.Business.Concrete
                 return false;
             }
         }
+
+        public Category UpdateCategory(Category category)
+        {
+           return categoryDal.Update(category);
+        }
     }
 }

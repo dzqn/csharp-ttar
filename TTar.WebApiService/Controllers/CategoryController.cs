@@ -23,7 +23,15 @@ namespace Ttar.WebApiService.Controllers
         public IActionResult Get()
         {
             var allCategories = categoryManager.GetAllCategory().ToArray();
-            return Ok(allCategories);
+            if (allCategories == null)
+                return Problem(statusCode: 500);
+            else
+            {
+                if (allCategories.Length > 0)
+                    return Ok(allCategories);
+                else
+                    return NoContent();
+            }
         }
 
         [HttpGet]
@@ -34,7 +42,7 @@ namespace Ttar.WebApiService.Controllers
             if (category != null && category.Id > 0)
                 return Ok(category);
             else
-                return NotFound();
+                return BadRequest();
         }
 
         [HttpPost]
@@ -60,9 +68,14 @@ namespace Ttar.WebApiService.Controllers
             else return BadRequest();
         }
 
+        [HttpPut]
         public IActionResult Update(Category category)
         {
-            return Ok();
+            var updatedCategory = categoryManager.UpdateCategory(category);
+            if (updatedCategory != null)
+                return Ok();
+
+            return BadRequest();
         }
     }
 }

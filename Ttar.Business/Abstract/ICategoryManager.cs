@@ -11,5 +11,6 @@ namespace Ttar.Business.Abstract
         bool DeleteCategory(Category category);
         Category AddCategory(Category category);
         Category GetSingleCategory(int id);
+        Category UpdateCategory(Category category);
     }
 }
